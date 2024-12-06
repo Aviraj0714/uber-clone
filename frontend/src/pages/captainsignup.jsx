@@ -16,7 +16,7 @@ const Captainsignup = () => {
   const [vehicleCapacity, setVehicleCapacity] = useState('');
   const [vehicleType, setVehicleType] = useState(''); // State for vehicle type
 
-  const { setCaptian } = React.useContext(CaptainDataContext);
+  const { setCaptain } = React.useContext(CaptainDataContext);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -43,7 +43,7 @@ const Captainsignup = () => {
       );
       if (response.status === 201) {
         const data = response.data;
-        setCaptian(data.captain);
+        setCaptain(data.captain);
         localStorage.setItem('token', data.token);
         navigate('/captainhome');
       }
